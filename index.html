@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillnServe - Technode</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .testimonial-card h4 {
+            color: var(--primary);
+            margin-top: auto;
+        }
+
+        .stats-bar {
+            background: rgba(255, 255, 255, 0.03);
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <aside class="sidebar">
+        <div class="logo">SkillnServe</div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="about.html" class="nav-link"><i class="fas fa-user-circle"></i> About</a></li>
+            <li><a href="#courses" class="nav-link"><i class="fas fa-book"></i> Courses</a></li>
+            <li><a href="#testimonials" class="nav-link"><i class="fas fa-comments"></i> Testimonials</a></li>
+            <li><a href="portfolio.html" class="nav-link"><i class="fas fa-layer-group"></i> Portfolio</a></li>
+            <li><a href="gallery.html" class="nav-link"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div style="margin-top: auto; color: var(--text-muted); font-size: 0.8rem;">
+            &copy; 2026 Technode
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <div style="margin-bottom: 1rem; color: var(--accent); letter-spacing: 2px;">EDUCATION + SERVICES</div>
+                <h1>Master Digital Skills & Build Software</h1>
+                <p>From Professional IT Courses to Custom Software Solutions. Learn CIT, DIT, Graphic Design, WordPress
+                    & Web Apps from experts.</p>
+                <div class="cta-group">
+                    <a href="#courses" class="cta-button"><i class="fas fa-graduation-cap"></i> View Courses</a>
+                    <a href="#about" class="cta-button"
+                        style="background: transparent; border: 1px solid var(--glass-border);"><i
+                            class="fas fa-code"></i> Our Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Intro -->
+        <section id="about">
+            <div class="section-title">Message from Founder</div>
+            <div class="card" style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Abdul Rauf (MCS)</h3>
+                    <p style="margin-bottom: 1rem;">I am a Master of Computer Science with over 25 years of experience
+                        in the technology sector and founder of TechNode Computer Education & English Language Center.
+                    </p>
+                    <p style="margin-bottom: 1rem;">My mission is to drive digital transformation by bridging
+                        professional education with modern software solutions. Through SkillnServe, I provide high-end
+                        software development services and empower students with industry-ready skills.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses -->
+        <section id="courses">
+            <div class="section-title">Featured Courses</div>
+            <div class="cards-grid">
+                <div class="card">
+                    <i class="fab fa-python fa-2x" style="color: #3742fa; margin-bottom: 1rem;"></i>
+                    <h3>Python 3 for Beginners</h3>
+                    <p>Fundamentals, Input/Output, Conditional Branching, and more.</p>
+                    <div style="margin-top: 1rem; color: var(--accent);">Featured Course</div>
+                </div>
+                <!-- Others -->
+                <div class="card">
+                    <h3>DIT & CIT Diploma</h3>
+                    <p style="color: var(--text-muted);">One Year • Beginner</p>
+                    <p>Computer Basic to Advance.</p>
+                </div>
+                <div class="card">
+                    <h3>Graphic Designing</h3>
+                    <p style="color: var(--text-muted);">4 Months • Beginner</p>
+                    <p>Master creative tools.</p>
+                </div>
+                <div class="card">
+                    <h3>2D Animation & Editing</h3>
+                    <p style="color: var(--text-muted);">3 Months • Intermediate</p>
+                    <p>Become a YouTuber/Creator.</p>
+                </div>
+                <div class="card">
+                    <h3>Web Designing</h3>
+                    <p style="color: var(--text-muted);">4 Months • Beginner</p>
+                    <p>Fundamentals of Web Components.</p>
+                </div>
+                <div class="card">
+                    <h3>Full Stack React</h3>
+                    <p style="color: var(--text-muted);">4 Months • Intermediate</p>
+                    <p>React Hooks and Redux.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Practical Training Dual Section -->
+        <section id="training-experience">
+            <div class="section-title">Practical Learning Experience / عملی تربیت</div>
+            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+                <!-- English Column -->
+                <div class="card" style="padding: 0; overflow: hidden;">
+                    <div style="height: 250px; overflow: hidden;">
+                        <img src="C:/Users/RaufTech22/.gemini/antigravity/brain/9ee00e1e-a288-4265-ac9b-ac2176274a32/uploaded_image_0_1768666668894.jpg"
+                            alt="Lab Training"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">Modern Computer Lab & Hands-on Training
+                        </h3>
+                        <p style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.6;">At Technode
+                            Computer Education, we believe in learning by doing. Our well-equipped computer lab provides
+                            students with a professional environment to master DIT, Graphic Designing, and Web
+                            Development through practical, real-world projects.</p>
+                        <a href="#courses" class="cta-button" style="display: inline-block; font-size: 0.9rem;">Explore
+                            Our Courses</a>
+                    </div>
+                </div>
+
+                <!-- Urdu Column -->
+                <div class="card" style="padding: 0; overflow: hidden; text-align: right; direction: rtl;">
+                    <div style="height: 250px; overflow: hidden;">
+                        <img src="C:/Users/RaufTech22/.gemini/antigravity/brain/9ee00e1e-a288-4265-ac9b-ac2176274a32/uploaded_image_1_1768666668894.jpg"
+                            alt="Practical Class"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    </div>
+                    <div style="padding: 2rem;">
+                        <h3
+                            style="color: var(--secondary); margin-bottom: 1rem; font-family: 'Noto Nastaliq Urdu', serif;">
+                            ہماری جدید کمپیوٹر لیب اور عملی تربیت</h3>
+                        <p
+                            style="margin-bottom: 1.5rem; color: var(--text-muted); line-height: 1.8; font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.1rem;">
+                            ٹیکنوڈ کمپیوٹر ایجوکیشن میں ہم صرف کتابی علم پر یقین نہیں رکھتے۔ ہماری اسٹیٹ آف دی آرٹ لیب
+                            میں طلباء کو پروفیشنل ماحول فراہم کیا جاتا ہے جہاں وہ DIT، گرافک ڈیزائننگ اور ویب ڈویلپمنٹ
+                            جیسے کورسز کی پریکٹیکل ٹریننگ حاصل کرتے ہیں۔</p>
+                        <a href="#courses" class="cta-button"
+                            style="display: inline-block; font-size: 0.9rem; background: linear-gradient(45deg, var(--secondary), var(--accent));">ہمارے
+                            کورسز دیکھیں</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials">
+            <div class="section-title">Trusted by Thousands</div>
+            <div class="cards-grid">
+                <div class="card testimonial-card">
+                    <p>“The practical approach at Technode Computer Center is amazing. I went from a beginner to a
+                        confident designer. The way they explain complex tools in simple Urdu/Sindhi is very helpful.”
+                    </p>
+                    <h4>NAVEED</h4>
+                </div>
+                <div class="card testimonial-card">
+                    <p>“Sir Rauf’s 25 years of experience truly shows. I learned not just how to code, but how to build
+                        professional software like POS systems. Best IT training in Tando Adam!”</p>
+                    <h4>ORANGZAIB</h4>
+                </div>
+                <div class="card testimonial-card">
+                    <p>“A perfect blend of passion and expertise! The focus is always on creating ‘Products, Not Just
+                        Art.’ Truly a 5-star learning experience!”</p>
+                    <h4>BABU PINJARO</h4>
+                </div>
+                <div class="card testimonial-card">
+                    <p>“Learning from an industry veteran like Sir Rauf was a game-changer. I gained the skills to build
+                        professional-grade software!”</p>
+                    <h4>SALMAN SOOMRO</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="section-title">Get In Touch</div>
+            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <!-- Contact Info -->
+                <div class="card">
+                    <h3 style="color: var(--primary); margin-bottom: 20px;">Contact Info</h3>
+                    <p style="margin-bottom: 10px;"><i class="fas fa-map-marker-alt"
+                            style="color: var(--accent); margin-right: 10px;"></i> Technode Computer Education, Near
+                        Memon Hospital, Opposite Faisal Mosque, Shah Faisal Street, Tando Adam, Sindh, Pakistan.</p>
+                    <p style="margin-bottom: 10px;"><i class="fas fa-phone"
+                            style="color: var(--accent); margin-right: 10px;"></i> +92 300 1234567</p>
+                    <p style="margin-bottom: 10px;"><i class="fab fa-whatsapp"
+                            style="color: #2ed573; margin-right: 10px;"></i> +92 300 1234567</p>
+                    <p style="margin-bottom: 20px;"><i class="fas fa-envelope"
+                            style="color: var(--accent); margin-right: 10px;"></i> info@technode.com</p>
+
+                    <h4 style="margin-bottom: 15px;">Follow Us</h4>
+                    <div style="font-size: 1.5rem; display: flex; gap: 15px;">
+                        <a href="https://www.facebook.com/TechNodeEducation" target="_blank" style="color: #4267B2;"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/abdulrauf1" target="_blank" style="color: #FF0000;"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://github.com/MadniRauf" target="_blank" style="color: #ffffff;"><i
+                                class="fab fa-github"></i></a>
+                        <a href="#" style="color: #1DA1F2;"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="card">
+                    <h3 style="color: var(--secondary); margin-bottom: 20px;">Send a Message</h3>
+                    <form onsubmit="event.preventDefault(); alert('Message sent!');">
+                        <div style="margin-bottom: 15px;">
+                            <input type="text" placeholder="Your Name"
+                                style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 5px; color: white;">
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <input type="email" placeholder="Your Email"
+                                style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 5px; color: white;">
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <textarea placeholder="Your Message" rows="4"
+                                style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 5px; color: white;"></textarea>
+                        </div>
+                        <button type="submit" class="cta-button"
+                            style="width: 100%; border: none; cursor: pointer;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="card" style="margin-top: 30px; padding: 0; overflow: hidden; height: 300px;">
+                <iframe
+                    src="https://maps.google.com/maps?q=Technode+Computer+Education+Tando+Adam&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <!-- Col 1 -->
+                <div class="footer-col">
+                    <div class="footer-logo">SkillnServe</div>
+                    <p>SkillnServe is the digital face of TechNode Computer Education. Founded by Abdul Rauf (MCS), we
+                        provide elite IT training and custom software development with 25 years of proven trust.</p>
+                </div>
+                <!-- Col 2 -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                        <ul>
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Graphic Design</a></li>
+                            <li><a href="#">App Development</a></li>
+                            <li><a href="#">Visual Effects</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="https://skillnserve.com/">Skill n Serve - Home</a></li>
+                            <li><a href="https://www.technode.somee.com/Home/AboutUs5">Technode Somee - Home</a></li>
+                            <li><a href="https://technodeducation.wixsite.com/technode">Technode Wix - Home</a></li>
+                            <li><a href="https://technodetdm.netlify.app/about">Technode - About</a></li>
+                            <li><a href="https://www.technode.somee.com/Home/AboutUs5">Technode Somee - About</a></li>
+                        </ul>
+
+
+                    </div>
+                </div>
+                <!-- Col 3 -->
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p>Technode Computer Education,<br>Shah Faisal Street TDM.</p>
+                    <p><i class="fas fa-phone-alt" style="color:var(--accent); margin-right:8px;"></i> +92 3003350311
+                    </p>
+                    <p><i class="fas fa-envelope" style="color:var(--accent); margin-right:8px;"></i>
+                        info@skillnserve.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                Copyright &copy; 2026 skillnserve Computer Services - Software - Web Solution<br>
+                Powered by Abdul Rauf - TECHNODE Computer Education - Training - Web Solution
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

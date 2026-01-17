@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery - Technode</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gallery-container {
+            padding: 2rem 0;
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            padding: 10px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .gallery-grid {
+            columns: 3 300px;
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            background: var(--bg-panel);
+            border: 1px solid var(--glass-border);
+            transform: translateY(0);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border-color: var(--primary);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .overlay-text h4 {
+            color: #fff;
+            margin-bottom: 5px;
+            transform: translateY(20px);
+            transition: transform 0.3s ease 0.1s;
+        }
+
+        .overlay-text p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            transform: translateY(20px);
+            transition: transform 0.3s ease 0.2s;
+        }
+
+        .gallery-item:hover .overlay-text h4,
+        .gallery-item:hover .overlay-text p {
+            transform: translateY(0);
+        }
+
+        /* Modal */
+        .lightbox-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.2);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                columns: 2 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <aside class="sidebar">
+        <div class="logo">Technode</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="about.html" class="nav-link"><i class="fas fa-user"></i> About Me</a></li>
+            <li><a href="portfolio.html" class="nav-link"><i class="fas fa-layer-group"></i> Portfolio</a></li>
+            <li><a href="#" class="nav-link active"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="index.html#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div style="margin-top: auto; color: var(--text-muted); font-size: 0.8rem;">
+            &copy; 2026 Technode
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <section class="hero"
+            style="min-height: 40vh; background-image: linear-gradient(to bottom, rgba(5,5,17,0.7), var(--bg-dark)), url('Assets/STUDENTS.jpg');">
+            <div class="hero-content">
+                <h1>Image Gallery</h1>
+                <p>Moments from Technode & Our Digital Creations</p>
+            </div>
+        </section>
+
+        <section class="gallery-container">
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="students">Life at Technode</button>
+                <button class="filter-btn" data-filter="software">Software Projects</button>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Students / Life -->
+                <div class="gallery-item" data-category="students">
+                    <img src="Assets/STUDENTS.jpg" alt="Students">
+                    <div class="gallery-overlay">
+                        <div class="overlay-text">
+                            <h4>Classroom Session</h4>
+                            <p>Students learning computer skills</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="students">
+                    <img src="Assets/STUDENTS2.jpg" alt="Students">
+                    <div class="gallery-overlay">
+                        <div class="overlay-text">
+                            <h4>Lab Practice</h4>
+                            <p>Hands-on training session</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="students">
+                    <img src="Assets/Technode1.jpg" alt="Technode">
+                    <div class="gallery-overlay">
+                        <div class="overlay-text">
+                            <h4>Institute Event</h4>
+                            <p>Gathering at Technode</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="students">
+                    <img src="Assets/Studen_Aug_1.jpg" alt="Students">
+                    <div class="gallery-overlay">
+                        <div class="overlay-text">
+                            <h4>Student Group</h4>
+                            <p>August Session</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software -->
+                <div class="gallery-item" data-category="software">
+                    <img src="Assets/SW Point of Sale System.png" alt="POS">
+                    <div class="gallery-overlay">
+                        <div class="overlay-text">
+                            <h4>Point of Sale</h4>
+                            <p>Retail Management System</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="software">
+                    <img src="Assets/sw Dr. OPD Software.png" alt="OPD">
+                    <div class="gallery-overlay">
+                        <div class="overlay-text">
+                            <h4>Dr. OPD System</h4>
+                            <p>Clinic Management</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="students">
+                    <img src="Assets/Student2025_4.jpg" alt="Student">
+                    <div class="gallery-overlay">
+                        <div class="overlay-text">
+                            <h4>Student Success</h4>
+                            <p>Class of 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="software">
+                    <img src="Assets/sw Pharmacy Software.png" alt="Pharmacy">
+                    <div class="gallery-overlay">
+                        <div class="overlay-text">
+                            <h4>Pharmacy Software</h4>
+                            <p>Medical Store Inventory</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="students">
+                    <img src="Assets/Technode3.jpg" alt="Technode">
+                    <div class="gallery-overlay">
+                        <div class="overlay-text">
+                            <h4>Tech Workshop</h4>
+                            <p>Interactive learning environment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="software">
+                    <img src="Assets/sw School Management.png" alt="School">
+                    <div class="gallery-overlay">
+                        <div class="overlay-text">
+                            <h4>School Management</h4>
+                            <p>Education System ERP</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="students">
+                    <img src="Assets/students works.jpg" alt="Students Work">
+                    <div class="gallery-overlay">
+                        <div class="overlay-text">
+                            <h4>Student Projects</h4>
+                            <p>Showcasing student assignments</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="software">
+                    <img src="Assets/sw SaleFrmAllInv.png" alt="Sales Form">
+                    <div class="gallery-overlay">
+                        <div class="overlay-text">
+                            <h4>Land Registry</h4>
+                            <p>Sindhi Language Software</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">SkillnServe</div>
+                    <p>SkillnServe is the digital face of TechNode Computer Education. Founded by Abdul Rauf (MCS), we
+                        provide elite IT training and custom software development with 25 years of proven trust.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                        <ul>
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Graphic Design</a></li>
+                            <li><a href="#">App Development</a></li>
+                            <li><a href="#">Visual Effects</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">DIT/CIT Courses</a></li>
+                            <li><a href="#">Python Programming</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                            <li><a href="#">HTML/CSS</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p>Technode Computer Education,<br>Shah Faisal Street TDM.</p>
+                    <p><i class="fas fa-phone-alt" style="color:var(--accent); margin-right:8px;"></i> +92 3003350311
+                    </p>
+                    <p><i class="fas fa-envelope" style="color:var(--accent); margin-right:8px;"></i>
+                        info@skillnserve.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                Copyright &copy; 2026 skillnserve Computer Training - Software - Web Solution<br>
+                Powered by Abdul Rauf - TECHNODE Computer Training - Software - Web Solution
+            </div>
+        </footer>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox">
+        <span class="close-modal">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Gallery Filter Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => item.style.opacity = '1', 10);
+                    } else {
+                        item.style.opacity = '0';
+                        setTimeout(() => item.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.close-modal');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                lightboxImg.src = imgSrc;
+                lightbox.style.display = 'flex';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

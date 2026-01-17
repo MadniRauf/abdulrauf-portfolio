@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Technode</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .badge {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            color: var(--primary);
+            border: 1px solid var(--glass-border);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 5px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .badge:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .timeline {
+            border-left: 2px solid var(--primary);
+            padding-left: 30px;
+            margin-left: 20px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: var(--bg-dark);
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+        }
+
+        .client-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .client-item {
+            background: var(--bg-panel);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .section-header p {
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <aside class="sidebar">
+        <div class="logo">Technode</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#experience" class="nav-link"><i class="fas fa-user-tie"></i> Experience</a></li>
+            <li><a href="#courses" class="nav-link"><i class="fas fa-book-open"></i> Courses</a></li>
+            <li><a href="#services" class="nav-link"><i class="fas fa-laptop-code"></i> Services</a></li>
+            <li><a href="gallery.html" class="nav-link"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
+            <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a></li>
+        </ul>
+        <div style="margin-top: auto; color: var(--text-muted); font-size: 0.8rem;">
+            &copy; 2026 Technode
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <section class="hero" style="min-height: 50vh;">
+            <div class="hero-content">
+                <h1>Professional Portfolio</h1>
+                <p>Equipping students with practical skills and delivering modern software solutions for over 25 years.
+                </p>
+            </div>
+        </section>
+
+        <!-- Experience & Institute -->
+        <section id="experience">
+            <div class="section-title">Our Experience</div>
+            <div class="card" style="text-align: center;">
+                <h3 style="margin-bottom: 1rem; color: var(--primary);">25 Years of Excellence</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 1rem;">With 25 years of extensive experience in computer
+                    education and training, Technode Computer Education is equipping students with practical skills.</p>
+                <p>Through modern curricula and expert instructors at our educational institute, we ensure the
+                    professional development of our students.</p>
+            </div>
+        </section>
+
+        <!-- Courses Offered -->
+        <section id="courses">
+            <div class="section-title">Courses Offered</div>
+            <div class="cards-grid">
+                <div class="card">
+                    <i class="fas fa-laptop fa-2x" style="color: var(--primary); margin-bottom: 15px;"></i>
+                    <h3>CIT (6 Months)</h3>
+                    <p>A comprehensive course on fundamental computer education and practical skills.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-certificate fa-2x" style="color: var(--secondary); margin-bottom: 15px;"></i>
+                    <h3>DIT (1 Year)</h3>
+                    <p>Diploma in Information Technology, based on modern IT tools and techniques.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-pen-nib fa-2x" style="color: #ff4757; margin-bottom: 15px;"></i>
+                    <h3>Graphic Designing</h3>
+                    <p>Learn creative graphics and visual communication skills.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-code fa-2x" style="color: #2ed573; margin-bottom: 15px;"></i>
+                    <h3>Web Designing</h3>
+                    <p>Gain skills in creating modern and responsive websites.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-video fa-2x" style="color: #ffa502; margin-bottom: 15px;"></i>
+                    <h3>Video Editing & Animation</h3>
+                    <p>Create stunning videos and 2D animations for YouTube, social media, and freelance work.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-bullhorn fa-2x" style="color: #3742fa; margin-bottom: 15px;"></i>
+                    <h3>Digital Marketing</h3>
+                    <p>Master online marketing strategies and tools.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services">
+            <div class="section-title">Software Services</div>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Software Design & Development</h3>
+                    <p>Custom software tailored to client needs.</p>
+                </div>
+                <div class="card">
+                    <h3>Online/Offline Products</h3>
+                    <p>Digital products to meet business requirements.</p>
+                </div>
+                <div class="card">
+                    <h3>Android & Web Apps</h3>
+                    <p>High-quality, responsive applications.</p>
+                </div>
+                <div class="card">
+                    <h3>CMS Development</h3>
+                    <p>WordPress customization and development.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Skills -->
+        <section id="skills">
+            <div class="section-title">My Skills</div>
+            <div class="card">
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="margin-bottom: 1rem; color: var(--text-main);">Development</h4>
+                    <div style="display: flex; flex-wrap: wrap;">
+                        <div class="badge">VB.NET / C#</div>
+                        <div class="badge">Desktop Apps (WinForms)</div>
+                        <div class="badge">LINQ / DevExpress</div>
+                        <div class="badge">ASP.NET Core MVC</div>
+                        <div class="badge">Razor Views</div>
+                        <div class="badge">React / Node.js</div>
+                        <div class="badge">REST APIs</div>
+                        <div class="badge">SQL Server</div>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: var(--text-main);">Creative & Training</h4>
+                    <div style="display: flex; flex-wrap: wrap;">
+                        <div class="badge">IT Education (25+ Years)</div>
+                        <div class="badge">Web Design</div>
+                        <div class="badge">Adobe Photoshop</div>
+                        <div class="badge">Illustrator</div>
+                        <div class="badge">CorelDraw</div>
+                        <div class="badge">Canva</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience (Projects) -->
+        <section id="projects">
+            <div class="section-title">Project Portfolio</div>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>School Management System</h3>
+                    <p>Fee management, student records, and certificates.</p>
+                </div>
+                <div class="card">
+                    <h3>Pharmacy Software</h3>
+                    <p>Medicine stock, sales, purchase, and expiry alerts.</p>
+                </div>
+                <div class="card">
+                    <h3>Aata Chaki Software</h3>
+                    <p>Wheat grinding record, flour delivery, and payment management.</p>
+                </div>
+                <div class="card">
+                    <h3>Point of Sale (POS)</h3>
+                    <p>Sales, purchase, stock, accounting, finance, and ledger management.</p>
+                </div>
+                <div class="card">
+                    <h3>Dr. OPD Software</h3>
+                    <p>Patient slip generation & record management.</p>
+                </div>
+                <div class="card">
+                    <h3>Land Registry Software</h3>
+                    <p>Property registry system developed in Sindhi language.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Timeline -->
+        <section id="education">
+            <div class="section-title">Education</div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3 style="color: var(--primary);">MCS (Master of Computer Science)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Al-Khair University, Hyderabad</p>
+                    <p>Software Technology</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 style="color: var(--secondary);">BCS (Bachelor of Computer Science)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Allama Iqbal Open University, Hyderabad
+                        Campus</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>MCSE (Microsoft Networking)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Hitech Computer Institute, Hyderabad</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>DIT (Diploma in Information Technology)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Fath Computer Institute, Hyderabad</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>B.Com / BSc</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Sindh University, Jamshoro</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clients -->
+        <section id="clients">
+            <div class="section-title">Our Clients</div>
+            <div class="client-list">
+                <div class="client-item">Perfect Atta Chakki</div>
+                <div class="client-item">Hamza Electronics</div>
+                <div class="client-item">Shaheen Pharmaceutical</div>
+                <div class="client-item">Areeb Bone Care</div>
+                <div class="client-item">Haji Roshan Din School</div>
+                <div class="client-item">Zulfiqar Stamp Vendor</div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <!-- Col 1 -->
+                <div class="footer-col">
+                    <div class="footer-logo">SkillnServe</div>
+                    <p>SkillnServe is the digital face of TechNode Computer Education. Founded by Abdul Rauf (MCS), we
+                        provide elite IT training and custom software development with 25 years of proven trust.</p>
+                </div>
+                <!-- Col 2 -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                        <ul>
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Graphic Design</a></li>
+                            <li><a href="#">App Development</a></li>
+                            <li><a href="#">Visual Effects</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">DIT/CIT Courses</a></li>
+                            <li><a href="#">Python Programming</a></li>
+                            <li><a href="#">JavaScript</a></li>
+                            <li><a href="#">HTML/CSS</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Col 3 -->
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p>Technode Computer Education,<br>Shah Faisal Street TDM.</p>
+                    <p><i class="fas fa-phone-alt" style="color:var(--accent); margin-right:8px;"></i> +92 3003350311
+                    </p>
+                    <p><i class="fas fa-envelope" style="color:var(--accent); margin-right:8px;"></i>
+                        info@skillnserve.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                Copyright &copy; 2026 skillnserve Computer Training - Software - Web Solution<br>
+                Powered by Abdul Rauf - TECHNODE Computer Training - Software - Web Solution
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
