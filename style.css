@@ -7,11 +7,23 @@
   --text-muted: #a0a0b0;
   --primary: #00d4ff;
   --secondary: #d400ff;
+  --pink-btn: #ff00de;
+  /* New Pink Color */
   --accent: #ff0055;
   --glass: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
   --sidebar-width: 260px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-cyan {
+  color: var(--primary) !important;
+}
+
+.bg-pink {
+  background: var(--pink-btn) !important;
+  border-color: var(--pink-btn) !important;
+  color: white !important;
 }
 
 * {
@@ -249,6 +261,32 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 3rem;
   padding: 0 2rem 3rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  transition: var(--transition);
+  border: 1px solid var(--glass-border);
+}
+
+.footer-social-link:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
 }
 
 .footer-col p {

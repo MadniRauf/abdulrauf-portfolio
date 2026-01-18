@@ -77,10 +77,12 @@
                 <p>From Professional IT Courses to Custom Software Solutions. Learn CIT, DIT, Graphic Design, WordPress
                     & Web Apps from experts.</p>
                 <div class="cta-group">
-                    <a href="#courses" class="cta-button"><i class="fas fa-graduation-cap"></i> View Courses</a>
-                    <a href="#about" class="cta-button"
-                        style="background: transparent; border: 1px solid var(--glass-border);"><i
-                            class="fas fa-code"></i> Our Services</a>
+                    <a href="#courses" class="cta-button text-cyan"
+                        style="border: 1px solid var(--primary); background: rgba(0, 212, 255, 0.1);"><i
+                            class="fas fa-graduation-cap"></i> View Courses</a>
+                    <a href="#about" class="cta-button text-cyan"
+                        style="background: transparent; border: 1px solid var(--primary);"><i class="fas fa-code"></i>
+                        Our Services</a>
                 </div>
             </div>
         </section>
@@ -148,8 +150,7 @@
                 <!-- English Column -->
                 <div class="card" style="padding: 0; overflow: hidden;">
                     <div style="height: 250px; overflow: hidden;">
-                        <img src="Assets/Student-Technode-960X960.jpg"
-                            alt="Lab Training"
+                        <img src="Assets/STUDENTS2.jpg" alt="Lab Training"
                             style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                     </div>
                     <div style="padding: 2rem;">
@@ -159,7 +160,8 @@
                             Computer Education, we believe in learning by doing. Our well-equipped computer lab provides
                             students with a professional environment to master DIT, Graphic Designing, and Web
                             Development through practical, real-world projects.</p>
-                        <a href="#courses" class="cta-button" style="display: inline-block; font-size: 0.9rem;">Explore
+                        <a href="#courses" class="cta-button bg-pink"
+                            style="display: inline-block; font-size: 0.9rem;">Explore
                             Our Courses</a>
                     </div>
                 </div>
@@ -167,8 +169,7 @@
                 <!-- Urdu Column -->
                 <div class="card" style="padding: 0; overflow: hidden; text-align: right; direction: rtl;">
                     <div style="height: 250px; overflow: hidden;">
-                        <img src="Assets/STUDENTS3.jpg"
-                            alt="Practical Class"
+                        <img src="Assets/Technode3.jpg" alt="Practical Class"
                             style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                     </div>
                     <div style="padding: 2rem;">
@@ -180,8 +181,8 @@
                             ٹیکنوڈ کمپیوٹر ایجوکیشن میں ہم صرف کتابی علم پر یقین نہیں رکھتے۔ ہماری اسٹیٹ آف دی آرٹ لیب
                             میں طلباء کو پروفیشنل ماحول فراہم کیا جاتا ہے جہاں وہ DIT، گرافک ڈیزائننگ اور ویب ڈویلپمنٹ
                             جیسے کورسز کی پریکٹیکل ٹریننگ حاصل کرتے ہیں۔</p>
-                        <a href="#courses" class="cta-button"
-                            style="display: inline-block; font-size: 0.9rem; background: linear-gradient(45deg, var(--secondary), var(--accent));">ہمارے
+                        <a href="#courses" class="cta-button bg-pink"
+                            style="display: inline-block; font-size: 0.9rem;">ہمارے
                             کورسز دیکھیں</a>
                     </div>
                 </div>
@@ -231,7 +232,7 @@
                     <p style="margin-bottom: 10px;"><i class="fab fa-whatsapp"
                             style="color: #2ed573; margin-right: 10px;"></i> +92 300 1234567</p>
                     <p style="margin-bottom: 20px;"><i class="fas fa-envelope"
-                            style="color: var(--accent); margin-right: 10px;"></i> info@technode.com</p>
+                            style="color: var(--accent); margin-right: 10px;"></i> info@skillnserve.com</p>
 
                     <h4 style="margin-bottom: 15px;">Follow Us</h4>
                     <div style="font-size: 1.5rem; display: flex; gap: 15px;">
@@ -248,17 +249,17 @@
                 <!-- Contact Form -->
                 <div class="card">
                     <h3 style="color: var(--secondary); margin-bottom: 20px;">Send a Message</h3>
-                    <form onsubmit="event.preventDefault(); alert('Message sent!');">
+                    <form action="mailto:info@skillnserve.com" method="post" enctype="text/plain">
                         <div style="margin-bottom: 15px;">
-                            <input type="text" placeholder="Your Name"
+                            <input type="text" name="name" placeholder="Your Name"
                                 style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 5px; color: white;">
                         </div>
                         <div style="margin-bottom: 15px;">
-                            <input type="email" placeholder="Your Email"
+                            <input type="email" name="email" placeholder="Your Email"
                                 style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 5px; color: white;">
                         </div>
                         <div style="margin-bottom: 15px;">
-                            <textarea placeholder="Your Message" rows="4"
+                            <textarea name="message" placeholder="Your Message" rows="4"
                                 style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 5px; color: white;"></textarea>
                         </div>
                         <button type="submit" class="cta-button"
@@ -282,6 +283,15 @@
                     <div class="footer-logo">SkillnServe</div>
                     <p>SkillnServe is the digital face of TechNode Computer Education. Founded by Abdul Rauf (MCS), we
                         provide elite IT training and custom software development with 25 years of proven trust.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/TechNodeEducation" target="_blank"
+                            class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/abdulrauf1" target="_blank" class="footer-social-link"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://github.com/MadniRauf" target="_blank" class="footer-social-link"><i
+                                class="fab fa-github"></i></a>
+                        <a href="#" class="footer-social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
                 <!-- Col 2 -->
                 <div class="footer-col">
@@ -324,7 +334,4 @@
     <script src="script.js"></script>
 </body>
 
-
 </html>
-
-
