@@ -455,3 +455,18 @@ section {
         right: 20px;
     }
 }
+
+
+
+/* CTA Group Hover Text Color */
+.cta-group .cta-button {
+  transition: var(--transition);
+}
+
+.cta-group .cta-button:hover {
+  color: var(--pink-btn) !important;
+}
+
+.cta-group .cta-button:hover i {
+  color: var(--pink-btn) !important;
+}
